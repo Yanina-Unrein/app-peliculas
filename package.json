@@ -11,7 +11,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "vercel-build": "ng build --configuration=production"
+    "vercel-build": "npx ng build --configuration=production"
   },
   "prettier": {
     "overrides": [

@@ -17,31 +17,27 @@ export default async function handler(
     return res.status(405).json({ error: 'Método no permitido' });
   }
 
-  // Extraer la ruta completa de la URL
   const fullUrl = req.url || '';
-  
-  // Remover "/api/tmdb" del inicio de la ruta
   const tmdbPath = fullUrl.replace(/^\/api\/tmdb/, '');
   
   if (!tmdbPath) {
     return res.status(400).json({ error: 'Ruta TMDB no especificada' });
   }
 
-  // EN PRODUCCIÓN: Usa la variable de entorno
-  // EN DESARROLLO: Puedes usar un fallback
-  const apiKey = process.env.TMDB_API_KEY || '955b4bb6c0276baaf32dfd729aa39205';
+  const apiKey = process.env['TMDB_API_KEY'];
   
+  if (!apiKey) {
+    console.error('TMDB_API_KEY no configurada en variables de entorno');
+    return res.status(500).json({ error: 'Configuración del servidor incorrecta' });
+  }
+
   const baseUrl = 'https://api.themoviedb.org/3';
-  
-  // Construir la URL final para TMDB
   const tmdbUrl = `${baseUrl}${tmdbPath}`;
-  
-  // Verificar si ya tiene parámetros para agregar la API key correctamente
   const separator = tmdbPath.includes('?') ? '&' : '?';
   const finalUrl = `${tmdbUrl}${separator}api_key=${apiKey}`;
 
   try {
-    console.log('Fetching from TMDB:', finalUrl);
+    console.log('Fetching from TMDB:', finalUrl.replace(apiKey, '***'));
     
     const response = await fetch(finalUrl);
     

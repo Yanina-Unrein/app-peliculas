@@ -46,7 +46,7 @@ ng serve
    - Obtén una API key de [TMDB](https://www.themoviedb.org/settings/api)
    - Agrega tu API key en `environment.ts`
 
-4. **Ejecuta localmente**: `npm run dev`
+4. **Ejecuta localmente**: `ng serve`
 
 ## Variables de entorno necesarias
 

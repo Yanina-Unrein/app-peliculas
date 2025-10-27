@@ -1,9 +1,0 @@
-{
-  "version": 2,
-  "outputDirectory": "dist/app-angular",
-  "installCommand": "npm install",
-  "routes": [
-    { "src": "/api/(.*)", "dest": "/api/tmdb.ts" },
-    { "src": "/(.*)", "dest": "/index.html" }
-  ]
-}

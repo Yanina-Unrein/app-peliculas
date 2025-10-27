@@ -15,8 +15,8 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root'
 })
 export class MovieService {
-  private URL = '/api/tmdb';  
-  private apiKey = environment.tmdbApiKey || ''; 
+  private URL = environment.tmdbApiUrl;
+  private apiKey = environment.tmdbApiKey;
   private carteleraPage = 1;
   public cargando = false;
 

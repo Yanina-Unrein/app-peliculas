@@ -1,16 +1,10 @@
 {
   "version": 2,
-  "buildCommand": "npx ng build --configuration=production",
+  "buildCommand": "npm run build:vercel",
   "outputDirectory": "dist/app-angular",
   "installCommand": "npm install",
   "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/tmdb.ts"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
+    { "src": "/api/(.*)", "dest": "/api/tmdb.ts" },
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }

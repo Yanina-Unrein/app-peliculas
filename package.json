@@ -6,9 +6,11 @@
     "start": "ng serve",
     "build": "ng build",
     "build:prod": "ng build --configuration=production",
+    "build:vercel": "ng build --configuration=production --output-path=dist/app-peliculas",
     "dev": "ng serve --proxy-config proxy.conf.json",
-    "vercel-build": "ng build --configuration=production",
-    "serve:api": "vercel dev"
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
   },
   "prettier": {
     "overrides": [

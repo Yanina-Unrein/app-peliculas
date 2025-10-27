@@ -6,21 +6,21 @@
       "use": "@vercel/node"
     },
     {
-      "src": "dist/**",
-      "use": "@vercel/static"
+      "src": "**/*.ts",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/api/tmdb/(.*)",
-      "dest": "/api/tmdb"
+      "src": "/api/(.*)",
+      "dest": "/api/tmdb.ts"
     },
     {
       "src": "/(.*)",
-      "dest": "/dist/$1"
+      "dest": "/index.html"
     }
   ],
   "buildCommand": "npm run vercel-build",
-  "outputDirectory": "dist",
+  "outputDirectory": "dist/app-peliculas",
   "installCommand": "npm install"
 }

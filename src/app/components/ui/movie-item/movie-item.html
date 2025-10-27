@@ -1,0 +1,30 @@
+@if (type === 'top-rated') {
+   <div class="item-card top-rated" tabindex="0" role="button" [attr.aria-label]="'Ver detalles de ' + displayTitle">
+    <span class="rank-number">{{ rank }}</span>
+    <div class="card-main">
+      <img [src]="posterPath" [alt]="displayTitle" />
+      <div class="info">
+        <h3>{{ displayTitle }}</h3>
+      </div>
+    </div>  
+  </div>
+}@else if (type === 'genre') {
+   <div class="item-card" tabindex="0" role="button" [attr.aria-label]="'Ver detalles de ' + displayTitle">
+    <div class="card-main">
+      <img [src]="posterPath" [alt]="displayTitle" />
+      <div class="info">
+        <h3>{{ displayTitle }}</h3>
+      </div>
+    </div>
+  </div>
+}@else {
+  <div class="item-card" tabindex="0" role="button" [attr.aria-label]="'Ver detalles de ' + displayTitle">
+    <div class="card-main">
+      <img [src]="posterPath" [alt]="displayTitle" />
+      <div class="info">
+        <h3>{{ displayTitle }}</h3>
+        <span>{{ releaseDate }}</span>
+      </div>
+    </div>
+  </div>
+}

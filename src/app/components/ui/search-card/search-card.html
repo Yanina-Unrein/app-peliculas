@@ -1,0 +1,13 @@
+<div class="search-card" 
+  tabindex="0" 
+  role="button"
+  (click)="navigateToDetail()"
+  (keydown.enter)="navigateToDetail()"
+  [attr.aria-label]="'Ver detalles de ' + displayTitle">
+  <div class="card-image">
+    <img [src]="posterPath" [alt]="displayTitle" />
+    <div class="media-type-badge">{{ mediaType }}</div>
+  </div>
+  <div class="card-content">
+    <h3 class="card-title">{{ displayTitle }}</h3>
+</div>

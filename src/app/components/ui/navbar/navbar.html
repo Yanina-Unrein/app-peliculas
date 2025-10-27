@@ -1,0 +1,25 @@
+<nav class="navigation" aria-label="Navegación principal">
+  <button class="hamburger" (click)="toggleMenu()" aria-label="Abrir menú">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <div class="nav-links" [class.open]="menuOpen">
+    <a routerLink="/search" aria-label="Buscar" (click)="toggleMenu()" data-tooltip="Buscar">
+      <img class="icons-navbar" src="/assets/icons/search.svg" alt="icon search">
+      <span class="link-text">Buscar</span>
+    </a>
+    <a routerLink="/" aria-label="Inicio" (click)="toggleMenu()" data-tooltip="Inicio">
+      <img class="icons-navbar" src="/assets/icons/home.svg" alt="icon home">
+      <span class="link-text">Inicio</span>
+    </a>
+    <a routerLink="/peliculas" aria-label="Películas" (click)="toggleMenu()" data-tooltip="Películas">
+      <img class="icons-navbar" src="/assets/icons/claqueta.svg" alt="icon peliculas">
+      <span class="link-text">Películas</span>
+    </a>
+    <a routerLink="/series" aria-label="Series" (click)="toggleMenu()" data-tooltip="Series">
+      <img class="icons-navbar" src="/assets/icons/tv-series.svg" alt="icon series">
+      <span class="link-text">Series</span>
+    </a>
+  </div>
+</nav>

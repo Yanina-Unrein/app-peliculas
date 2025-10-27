@@ -1,0 +1,134 @@
+.search-page{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 30px 10px;
+}
+
+.intro{
+    padding: 40px 0;
+}
+
+h1, p{
+    color: #ffffff;
+}
+
+h1{
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Loading styles */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.real-time-loading {
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Resultados */
+.real-time-results,
+.search-results {
+  margin-top: 2rem;
+  animation: fadeInUp 0.4s ease;
+}
+
+.real-time-results h3,
+.search-results h3 {
+  color: #fff;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.error {
+  text-align: center;
+  color: #ff6b6b;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+  padding: 1rem;
+  background: rgba(255, 107, 107, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@media (min-width: 768px) {
+  .search-page{
+    padding: 50px;
+    padding-left: 65px;
+  }
+
+   .results-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+  
+  .loading {
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .search-page{ 
+    padding-right: 10px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .search-page {
+    padding: 40px 80px;
+  }
+}

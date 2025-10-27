@@ -1,0 +1,132 @@
+.item-card {
+  width: 280px;
+  max-width: 300px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: relative;
+  scroll-snap-align: start;
+}
+
+.item-card.top-rated {
+  position: relative;
+  background: transparent;
+  border-radius: 0;
+  overflow: visible;
+  display: block;
+  overflow: visible;
+}
+
+.item-card.top-rated .rank-number {
+  position: absolute;
+  left: 5px;
+  bottom: 0; 
+  transform: translateY(-50%);
+  font-size: 140px;
+  font-weight: 900;
+  color: #000;
+  -webkit-text-stroke: 3px #fff;
+  z-index: 3;
+  text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  font-family: "Netflix Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 0.8;
+  height: auto;
+  letter-spacing: -20px;
+}
+
+.item-card.top-rated .card-main {
+  position: relative;
+  z-index: 1;
+}
+
+.item-card.top-rated .card-main img {
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  margin-left: 0;
+}
+
+.item-card img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+.item-card .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 10px;
+  color: #fff;
+  min-height: 80px; /* asegura altura uniforme */
+  height: 80px; /* fuerza misma altura en todas */
+}
+
+.item-card.genre .info {
+  height: 70px; /* un poco más baja */
+}
+
+.item-card .info h3 {
+  font-size: 1rem;
+  line-height: 1.3;
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* muestra 2 líneas */
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+
+.item-card .info p {
+  display: none; 
+}
+
+@media (min-width: 768px) {
+   .item-card.top-rated .rank-number {
+    font-size: 120px;
+    height: 130px;
+    bottom: -30px;
+    left: -5px;
+  }
+
+  .item-card.top-rated .card-main {
+    margin-left: 40px;
+  }
+
+  .item-card {
+    width: 350px;
+    transition: all 0.4s ease;
+  }
+
+  .item-card:hover {
+    width: 600px;        
+    transform: scale(1.02);
+    z-index: 10;
+  }
+
+  .item-card:hover img {
+    height: 500px;     
+  }
+
+  .item-card:hover .info p {
+    display: block;     
+  }
+
+}
+
+@media (min-width: 1200px) {
+  .item-card {
+    width: 250px;
+  }
+
+  .item-card:hover {
+    width: 550px;
+  }
+}

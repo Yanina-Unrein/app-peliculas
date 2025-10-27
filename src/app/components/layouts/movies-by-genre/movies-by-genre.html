@@ -1,0 +1,19 @@
+@for (section of genreSections; track section.id; let i = $index) {
+    <section class="genre-section">
+        <h2>{{ section.name }}</h2>
+        <div class="carousel-container">
+            <!-- Flecha izquierda -->
+            <button class="nav-arrow prev-arrow" (click)="scrollLeft(i)">‹</button>
+            
+            <!-- Contenedor del carrusel -->
+            <div class="cards-row" #cardsRow>
+                 @for (item of section.items; track item.id) {
+                <app-movie-item [item]="item" [type]="'genre'"></app-movie-item> 
+                }
+            </div>
+            
+            <!-- Flecha derecha -->
+            <button class="nav-arrow next-arrow" (click)="scrollRight(i)">›</button>
+        </div>
+    </section>
+}

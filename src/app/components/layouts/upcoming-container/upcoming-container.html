@@ -1,0 +1,17 @@
+<section class="upcoming-section">
+  <h2>Próximamente</h2>
+   <div class="carousel-container">
+    <!-- Flecha izquierda -->
+    <button class="nav-arrow prev-arrow" (click)="scrollLeft()">‹</button>
+    
+    <!-- Contenedor del carrusel -->
+    <div class="cards-row" #cardsRow>
+      @for (movie of upcomingMovies; track $index) {
+        <app-movie-item [item]="movie"></app-movie-item>
+      }
+    </div>
+    
+    <!-- Flecha derecha -->
+    <button class="nav-arrow next-arrow" (click)="scrollRight()">›</button>
+  </div>
+</section>

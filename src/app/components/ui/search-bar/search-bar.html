@@ -1,0 +1,25 @@
+<div class="navbar-search">
+    <input
+      #txtBuscar
+      type="search"
+      placeholder="Buscar película"
+      [value]="searchTerm"
+      (input)="onInputChange($event)"
+      (keydown)="onKeyDown($event)"
+      (keyup.enter)="onEnterKey()" 
+    />
+    
+    @if (searchTerm) {
+      <button 
+        class="clear-btn"
+        (click)="clearSearch()"
+        aria-label="Limpiar búsqueda"
+        type="button">
+        ×
+      </button>
+    }
+    
+    <button (click)="onSearch()"> 
+      <img src="/assets/icons/search.svg" alt="Buscar" class="search-icon" />
+    </button>
+</div>

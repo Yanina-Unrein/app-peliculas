@@ -1,0 +1,23 @@
+<section>
+  @if (featuredItem) {
+    <div
+      class="hero"
+      [class.show]="showMovie"
+      [style.background-image]="'url(https://image.tmdb.org/t/p/original' + featuredItem.backdrop_path + ')'">
+      <div class="hero-content">
+        <h3 class="type-label">
+          <span>M</span>@if(type === 'movie'){ PELICULAS }@if(type === 'tv'){ SERIES }
+        </h3>
+        <h1 class="title">{{ itemTitle }}</h1>
+        <p>{{ featuredItem.overview }}</p>
+        <div class="hero-buttons">
+          <button class="play">▶ Reproducir</button>
+          <button class="info" (click)="goToDetail()">ℹ Más información</button>
+        </div>
+      </div>
+    </div>
+  }
+</section>
+
+
+

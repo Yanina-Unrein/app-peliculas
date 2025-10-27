@@ -1,0 +1,21 @@
+<section class="movie-section">
+    <h1>Peliculas</h1>
+    <p>
+        Explora las últimas películas organizadas por género, desde acción y aventura hasta romance y ciencia ficción. Descubre nuevos lanzamientos, clásicos y títulos populares para todos los gustos.
+    </p>
+    @for (section of genreSections; track section.id; let i = $index) {
+        <section class="genre-section">
+            <h2>{{ section.name }}</h2>
+            <div class="carousel-container">
+                <button class="nav-arrow prev-arrow" (click)="scrollLeft(i)">‹</button>
+                <div class="cards-row" #cardsRow>
+                @for (item of section.items; track item.id){
+                    <app-movie-item [item]="item" [type]="'genre'"></app-movie-item>
+                }
+                </div>
+                <button class="nav-arrow next-arrow" (click)="scrollRight(i)">›</button>
+            </div>
+        </section>
+    }
+</section>
+

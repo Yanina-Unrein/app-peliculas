@@ -1,0 +1,53 @@
+<section class="search-page">
+    <div class="intro">
+        <h1>Descubre tu próxima historia</h1>
+        <p>Busca entre miles de películas y series. Encuentra tus títulos favoritos, explora nuevos géneros y revive los grandes clásicos del cine y la televisión.</p>
+    </div>
+    
+    <app-search-bar 
+        (search)="onSearch($event)" 
+        (realTimeResults)="onRealTimeResults($event)"
+        (realTimeLoading)="onRealTimeLoading($event)">
+    </app-search-bar>
+
+    <!-- Loading para búsqueda en tiempo real -->
+    @if (realTimeLoading()) {
+        <div class="loading real-time-loading">
+            <div class="spinner"></div>
+            <span>Buscando...</span>
+        </div>
+    }
+
+    <!-- Resultados en tiempo real -->
+    @if (realTimeResults().length > 0 && !realTimeLoading()) {
+        <div class="real-time-results">
+            <h3>Resultados encontrados:</h3>
+            <div class="results-grid">
+                @for (item of realTimeResults(); track item.id) {
+                    <app-search-card [item]="item"></app-search-card>
+                }
+            </div>
+        </div>
+    }
+
+    <!-- Resultados de búsqueda tradicional -->
+    @if (showTraditionalResults()) {
+        @if (loading()) {
+            <div class="loading">
+                <div class="spinner"></div>
+                <span>Buscando resultados...</span>
+            </div>
+        } @else if (results().length > 0) {
+            <div class="search-results">
+                <h3>Resultados de búsqueda para "{{ lastSearchTerm() }}"</h3>
+                <div class="results-grid">
+                    @for (item of results(); track item.id) {
+                        <app-search-card [item]="item"></app-search-card>
+                    }
+                </div>
+            </div>
+        } @else if (error()) {
+            <p class="error">{{ error() }}</p>
+        }
+    }
+</section>

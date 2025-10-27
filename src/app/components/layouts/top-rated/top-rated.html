@@ -1,0 +1,16 @@
+<section class="topRated-section">
+  <h2>Top 10 hoy</h2>
+   <div class="carousel-container">
+    <button class="nav-arrow prev-arrow" (click)="scrollLeft()">‹</button>
+   <div class="cards-row" #cardsRow>
+      @for (movie of topMovies; track $index) {
+        <app-movie-item
+          [item]="movie"
+          [type]="'top-rated'"
+          [rank]="$index + 1"
+        ></app-movie-item>
+      }
+    </div>
+    <button class="nav-arrow next-arrow" (click)="scrollRight()">›</button>
+  </div>
+</section>

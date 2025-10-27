@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('/assets/fonts/BebasNeue-Regular.otf') format('opentype'),
+       url('/assets/fonts/BebasNeue-Regular.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; /* track invisible */
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(50, 50, 50, 0.548); /* semi-transparente */
+    border-radius: 4px;
+}
+
+/* Hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(32, 32, 32, 0.4); /* más visible al pasar mouse */
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(51, 51, 51, 0.2);
+}
+

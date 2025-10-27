@@ -1,0 +1,132 @@
+.tv-by-genre-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 30px 10px;
+}
+
+h1{
+    color: #fff;
+    padding: 20px 0 0;
+}
+
+p{
+    color: #ccc;
+    padding: 10px 0 20px;
+}
+
+h2{
+  color: #fff;
+  padding-bottom: 20px;
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  position: relative;
+}
+
+.cards-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  overflow-x: auto; 
+  width: 100%;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; 
+}
+
+.cards-row::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-arrow {
+  display: none;
+  flex-shrink: 0;
+}
+
+.cards-row {
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+@media (min-width: 768px) {
+    .tv-by-genre-container{
+        padding: 50px 0;
+        padding-left: 65px;
+    }
+    h1{
+        font-size: 2.5rem;
+    }
+
+    p{
+        width: 65%;
+        font-size: 1.2rem;
+    }
+
+    h2{
+        font-size: 1.8rem;
+    }
+
+    .cards-row{
+        gap: 25px;
+    }
+}
+
+@media (min-width: 1024px) {
+  .tv-by-genre-container{ 
+    padding-right: 10px;
+  }
+  
+  .carousel-container {
+    gap: 20px;
+  }
+  
+  .nav-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.5);
+      transform: scale(1.1);
+    }
+    
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+  
+  .cards-row {
+    flex: 1;
+    min-width: 0; 
+  }
+}
+
+@media (min-width: 1440px) {
+  .genre-section {
+    padding: 20px;
+  }
+  
+  .nav-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 28px;
+    text-align: center;
+  }
+}

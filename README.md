@@ -50,7 +50,7 @@ ng serve
 
 ## Variables de entorno necesarias
 
-- `TMDB_API_KEY`: Tu API key de TMDB
+- `tmdbApiKey`: Tu API key de TMDB
 
 ## Despliegue
 
